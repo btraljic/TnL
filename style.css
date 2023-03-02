@@ -65,6 +65,10 @@ hr {
   border-color: #efedd8;
 }
 
+a:visited {
+  color: inherit;
+}
+
 /* ****************************************************************************
 ***** header
 **************************************************************************** */
@@ -157,15 +161,71 @@ main .topContainer a {
 ***** footer
 **************************************************************************** */
 footer {
-  background-color: #ddd;
+  background-color: #000;
   position: absolute;
   overflow: hidden;
   left: 0;
   right: 0;
   bottom: 0;
   height: var(--footer-height);
-  color: #eee;
+  color: #fff;
   text-align: center;
+  text-decoration: none;
+}
+
+footer .wrapper {
+  display: flex;
+}
+
+footer .left,
+footer .middle,
+footer .right {
+  padding: 0 2rem;
+  flex-direction: column;
+}
+
+footer .left {
+  justify-content: right;
+}
+
+footer .middle,
+footer .right {
+  justify-content: left;
+  align-items: start !important;
+}
+
+footer .logo {
+  padding: 1rem;
+}
+
+footer .logo img {
+  display: block;
+  height: calc(var(--header-height) * 0.5);
+  margin-left: auto;
+}
+
+footer .logo a {
+  display: inline-block;
+}
+
+footer h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+footer h4 > a {
+  display: block;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
 /* ****************************************************************************
