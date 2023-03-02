@@ -9,6 +9,7 @@
   --footer-height: 420px;
   --footer-background-color: #000;
   --top-container-height: 700px;
+  --col-min-width: 360px;
 }
 
 html,
@@ -17,6 +18,7 @@ body {
   height: 100%;
   padding: 0 !important;
   margin: 0 !important;
+  font-family: "Times New Roman", Times, serif;
   font-size: 16px;
 }
 
@@ -25,6 +27,10 @@ body {
   position: relative;
   min-height: 100%;
   padding-bottom: var(--footer-height);
+}
+
+p {
+  line-height: 1.6;
 }
 
 h1 {
@@ -50,6 +56,13 @@ h3 {
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 1px;
+}
+
+hr {
+  height: 2px;
+  border-style: solid;
+  background-color: #f6ebe0;
+  border-color: #efedd8;
 }
 
 /* ****************************************************************************
@@ -173,8 +186,30 @@ footer {
   margin-bottom: 2rem;
 }
 
-.container .title a {
-  align-self: center;
+.container .left,
+.container .middle,
+.container .right {
+  display: flex;
+  width: 33.3333333333%;
+  align-items: center;
+}
+
+.container .title .middle {
+  justify-content: center;
+}
+
+.container .title .middle > h2 {
+  text-align: center;
+}
+
+.container .title .right {
+  justify-content: right;
+}
+
+.section-description {
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 400px) {
@@ -233,9 +268,7 @@ footer {
 .col {
   display: block;
   flex: 1 0 0%;
-  /* flex: 0 0 auto;
-  width: 25%; */
-  min-width: 360px;
+  min-width: var(--col-min-width);
 }
 
 /* ****************************************************************************
@@ -253,4 +286,46 @@ footer {
   padding-left: 2rem;
   padding-right: 2rem;
   margin-bottom: 3rem;
+}
+
+/* ****************************************************************************
+***** experience
+**************************************************************************** */
+.experience {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    url("beach_family.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 360px;
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem;
+  text-decoration: none;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.experience h3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.experience h4 {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  min-height: 2.4rem;
+}
+
+.experience p {
+  display: inline-block;
+  background-color: #f0b540;
+  color: #333333;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
 }
