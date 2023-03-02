@@ -1,5 +1,11 @@
 /* place all CSS for the page in this file */
 
+:root {
+  --header-height: 80px;
+  --footer-height: 420px;
+  --top-container-height: 700px;
+}
+
 html,
 body {
   width: 100%;
@@ -13,14 +19,45 @@ body {
   display: flex;
   position: relative;
   min-height: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: var(--footer-height);
 }
 
 /* ****************************************************************************
 ***** header
 **************************************************************************** */
 header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--header-height);
+  background-color: transparent;
+  z-index: 100;
+}
+
+header .logo {
+  text-align: left;
+  padding: 1rem;
+}
+
+header .logo img {
+  display: block;
+  height: calc(var(--header-height) * 0.5);
+}
+
+header .logo a {
+  display: inline-block;
+}
+
+/* ****************************************************************************
+***** main
+**************************************************************************** */
+main {
+  min-width: 100%;
+  padding-top: var(--top-container-height);
+}
+
+main .topContainer {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("beach.jpg");
   background-repeat: no-repeat;
@@ -31,39 +68,25 @@ header {
   left: 0;
   right: 0;
   top: 0;
-  height: 700px;
+  height: var(--top-container-height);
   color: #fff;
   text-align: center;
 }
 
-header .logo {
-  text-align: left;
-  padding: 1rem;
-}
-
-header .logo img {
-  display: block;
-  height: 40px;
-}
-
-header .logo a {
-  display: inline-block;
-}
-
-header .topContainer {
+main .topContainer > section > div {
   position: absolute;
-  height: 200px;
+  height: calc(var(--top-container-height) * 0.5);
   width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-header .topContainer > div {
+main .topContainer > section > div > div {
   padding: 0 2rem;
 }
 
-header .topContainer h1 {
+main .topContainer h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
   font-weight: 300;
@@ -72,12 +95,12 @@ header .topContainer h1 {
   margin-bottom: 1rem;
 }
 
-header .topContainer p {
+main .topContainer p {
   font-weight: 500;
   letter-spacing: 1px;
 }
 
-header .topContainer a {
+main .topContainer a {
   display: inline-block;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
@@ -92,13 +115,18 @@ header .topContainer a {
 }
 
 /* ****************************************************************************
-***** main
+***** footer
 **************************************************************************** */
-main {
-  display: flex;
-  min-width: 100%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+footer {
+  background-color: #ddd;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--footer-height);
+  color: #eee;
+  text-align: center;
 }
 
 .container {
