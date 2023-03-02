@@ -2,7 +2,9 @@
 
 :root {
   --header-height: 80px;
+  --header-background-color: #000;
   --footer-height: 420px;
+  --footer-background-color: #000;
   --top-container-height: 700px;
 }
 
@@ -32,7 +34,12 @@ header {
   top: 0;
   height: var(--header-height);
   background-color: transparent;
+  transition: background-color 1000ms ease;
   z-index: 100;
+}
+
+header.scrolled {
+  background-color: var(--header-background-color);
 }
 
 header .logo {
@@ -73,7 +80,7 @@ main .topContainer {
   text-align: center;
 }
 
-main .topContainer > section > div {
+main .topContainer .outer {
   position: absolute;
   height: calc(var(--top-container-height) * 0.5);
   width: 100%;
@@ -82,7 +89,7 @@ main .topContainer > section > div {
   transform: translate(-50%, -50%);
 }
 
-main .topContainer > section > div > div {
+main .topContainer .inner {
   padding: 0 2rem;
 }
 
