@@ -103,6 +103,10 @@ header .logo a {
   display: inline-block;
 }
 
+header .logo a:hover img {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
 /* ****************************************************************************
 ***** main
 **************************************************************************** */
@@ -159,6 +163,12 @@ main .topContainer a {
   border-radius: 5px;
 }
 
+main .topContainer a:hover {
+  box-shadow: 0 0 4px #fff;
+
+  /* filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); */
+}
+
 /* ****************************************************************************
 ***** footer
 **************************************************************************** */
@@ -206,10 +216,6 @@ footer .logo img {
   margin-left: auto;
 }
 
-footer .logo a {
-  display: inline-block;
-}
-
 footer h4 {
   font-family: Arial, Helvetica, sans-serif;
   text-align: left;
@@ -230,6 +236,10 @@ footer h4 > a {
   margin-bottom: 1.5rem;
 }
 
+footer h4 > a:hover {
+  color: #ccc;
+}
+
 /* ****************************************************************************
 ***** container
 **************************************************************************** */
@@ -246,6 +256,10 @@ footer h4 > a {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
+}
+
+.container .title a:hover {
+  color: #555;
 }
 
 .container .left,
@@ -350,6 +364,10 @@ footer h4 > a {
   margin-bottom: 3rem;
 }
 
+.card:hover img {
+  box-shadow: 0 0 5px #555;
+}
+
 /* ****************************************************************************
 ***** experience
 **************************************************************************** */
@@ -390,4 +408,8 @@ footer h4 > a {
   margin: 0;
   padding: 0.5rem 1rem;
   border-radius: 20px;
+}
+
+.experience:hover {
+  box-shadow: 0 0 5px #555;
 }
