@@ -65,7 +65,9 @@ hr {
   border-color: #efedd8;
 }
 
-a:visited {
+a:visited,
+a:link,
+a:active {
   color: inherit;
 }
 
