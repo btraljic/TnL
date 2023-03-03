@@ -9,7 +9,7 @@
   --footer-height: 420px;
   --footer-background-color: #000;
   --top-container-height: 700px;
-  --col-min-width: 360px;
+  --col-min-width: 320px;
 }
 
 html,
@@ -18,6 +18,7 @@ body {
   height: 100%;
   padding: 0 !important;
   margin: 0 !important;
+  overflow-x: hidden;
   font-family: "Times New Roman", Times, serif;
   font-size: 16px;
 }
@@ -97,6 +98,7 @@ header .logo {
 header .logo img {
   display: block;
   height: calc(var(--header-height) * 0.5);
+  max-width: 100%;
 }
 
 header .logo a {
@@ -214,6 +216,7 @@ footer .logo img {
   display: block;
   height: calc(var(--header-height) * 0.5);
   margin-left: auto;
+  max-width: 100%;
 }
 
 footer h4 {
@@ -238,6 +241,34 @@ footer h4 > a {
 
 footer h4 > a:hover {
   color: #ccc;
+}
+
+@media (max-width: 769px) {
+  footer .wrapper {
+    flex-wrap: wrap;
+  }
+  footer .left {
+    width: 100% !important;
+    padding: 0 0.5rem;
+  }
+  footer .middle,
+  footer .right {
+    width: 40% !important;
+    padding: 0 0.5rem;
+  }
+  footer .right {
+    justify-content: right;
+  }
+  footer .logo img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  footer h4,
+  footer h4 > a {
+    letter-spacing: normal;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
 }
 
 /* ****************************************************************************
@@ -288,9 +319,18 @@ footer h4 > a:hover {
   margin-bottom: 2rem;
 }
 
+@media (min-width: 360px) {
+  .container {
+    max-width: 340px;
+    padding-right: 0.1rem;
+    padding-left: 0.1rem;
+  }
+}
 @media (min-width: 400px) {
   .container {
     max-width: 380px;
+    padding-right: 0.1rem;
+    padding-left: 0.1rem;
   }
 }
 @media (min-width: 576px) {
@@ -352,6 +392,7 @@ footer h4 > a:hover {
 **************************************************************************** */
 .card {
   cursor: pointer;
+  text-decoration: none;
 }
 
 .card img {
@@ -377,7 +418,7 @@ footer h4 > a:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  min-height: 360px;
+  min-height: 320px;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem;
   text-decoration: none;

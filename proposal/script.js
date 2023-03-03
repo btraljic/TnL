@@ -34,12 +34,4 @@ $(document).ready(function () {
       $("header").removeClass("scrolled");
     }
   });
-
-  // --------------------------------------------------------------------------
-  // ----- Go to url from span
-  // --------------------------------------------------------------------------
-  $(".card").click(function (e) {
-    e.preventDefault();
-    window.location = $(this).attr("href");
-  });
 });
