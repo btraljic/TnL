@@ -1,0 +1,415 @@
+/* place all CSS for the page in this file */
+
+/* ****************************************************************************
+***** global
+**************************************************************************** */
+:root {
+  --header-height: 80px;
+  --header-background-color: #000;
+  --footer-height: 420px;
+  --footer-background-color: #000;
+  --top-container-height: 700px;
+  --col-min-width: 360px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: var(--footer-height);
+}
+
+p {
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+hr {
+  height: 2px;
+  border-style: solid;
+  background-color: #f6ebe0;
+  border-color: #efedd8;
+}
+
+a:visited,
+a:link,
+a:active {
+  color: inherit;
+}
+
+/* ****************************************************************************
+***** header
+**************************************************************************** */
+header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--header-height);
+  background-color: transparent;
+  transition: background-color 1000ms ease;
+  z-index: 100;
+}
+
+header.scrolled {
+  background-color: var(--header-background-color);
+}
+
+header .logo {
+  text-align: left;
+  padding: 1rem;
+}
+
+header .logo img {
+  display: block;
+  height: calc(var(--header-height) * 0.5);
+}
+
+header .logo a {
+  display: inline-block;
+}
+
+header .logo a:hover img {
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+/* ****************************************************************************
+***** main
+**************************************************************************** */
+main {
+  min-width: 100%;
+  padding-top: var(--top-container-height);
+}
+
+main .topContainer {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("beach.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--top-container-height);
+  color: #fff;
+  text-align: center;
+}
+
+main .topContainer .outer {
+  position: absolute;
+  height: calc(var(--top-container-height) * 0.5);
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main .topContainer .inner {
+  padding: 0 2rem;
+}
+
+main .topContainer p {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+main .topContainer a {
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  background-color: #f0b540;
+  color: #333333;
+  margin-top: 0.5rem;
+  padding: 1rem 4rem;
+  border-radius: 5px;
+}
+
+main .topContainer a:hover {
+  box-shadow: 0 0 4px #fff;
+
+  /* filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); */
+}
+
+/* ****************************************************************************
+***** footer
+**************************************************************************** */
+footer {
+  background-color: #000;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--footer-height);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+footer .wrapper {
+  display: flex;
+}
+
+footer .left,
+footer .middle,
+footer .right {
+  padding: 0 2rem;
+  flex-direction: column;
+}
+
+footer .left {
+  justify-content: right;
+}
+
+footer .middle,
+footer .right {
+  justify-content: left;
+  align-items: start !important;
+}
+
+footer .logo {
+  padding: 1rem;
+}
+
+footer .logo img {
+  display: block;
+  height: calc(var(--header-height) * 0.5);
+  margin-left: auto;
+}
+
+footer h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+footer h4 > a {
+  display: block;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+footer h4 > a:hover {
+  color: #ccc;
+}
+
+/* ****************************************************************************
+***** container
+**************************************************************************** */
+.container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 3rem;
+}
+
+.container .title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.container .title a:hover {
+  color: #555;
+}
+
+.container .left,
+.container .middle,
+.container .right {
+  display: flex;
+  width: 33.3333333333%;
+  align-items: center;
+}
+
+.container .title .middle {
+  justify-content: center;
+}
+
+.container .title .middle > h2 {
+  text-align: center;
+}
+
+.container .title .right {
+  justify-content: right;
+}
+
+.section-description {
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 400px) {
+  .container {
+    max-width: 380px;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* ****************************************************************************
+***** row/col
+**************************************************************************** */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+  text-align: center;
+}
+
+.row > * {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+
+.col {
+  display: block;
+  flex: 1 0 0%;
+  min-width: var(--col-min-width);
+}
+
+/* ****************************************************************************
+***** card
+**************************************************************************** */
+.card {
+  cursor: pointer;
+}
+
+.card img {
+  max-width: 100%;
+}
+
+.card .description {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 3rem;
+}
+
+.card:hover img {
+  box-shadow: 0 0 5px #555;
+}
+
+/* ****************************************************************************
+***** experience
+**************************************************************************** */
+.experience {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    url("beach_family.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 360px;
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem;
+  text-decoration: none;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.experience h3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.experience h4 {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  min-height: 2.4rem;
+}
+
+.experience p {
+  display: inline-block;
+  background-color: #f0b540;
+  color: #333333;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.experience:hover {
+  box-shadow: 0 0 5px #555;
+}
