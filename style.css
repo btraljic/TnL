@@ -22,7 +22,7 @@ body {
   font-size: 16px;
 }
 
-.wrapper {
+body > .wrapper {
   display: flex;
   position: relative;
   min-height: 100%;
@@ -381,7 +381,7 @@ footer h4 > a:hover {
 }
 
 .col {
-  display: block;
+  display: flex;
   flex: 1 0 0%;
   min-width: var(--col-min-width);
 }
@@ -390,6 +390,7 @@ footer h4 > a:hover {
 ***** card
 **************************************************************************** */
 .card {
+  flex-direction: column;
   cursor: pointer;
   text-decoration: none;
 }
